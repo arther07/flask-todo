@@ -33,11 +33,14 @@ def submit_item():
     db.items.insert_one(item)
     return "Item saved successfully!", 200
 
-@app.route('/api', methods=['GET'])
-def get_json():
-    with open('data.json') as f:
-        data = json.load(f)
-    return jsonify(data)
+@app.route('/submittodoitem', methods=['POST'])
+def submit_todo_item():
+    data = request.json
+    db.todos.insert_one({
+        "itemName": data["itemName"],
+        "itemDescription": data["itemDescription"]
+    })
+    return jsonify({"status": "success"}), 201
 
 if henrry == '__main__':
     app.run(debug=True)
