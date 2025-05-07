@@ -2,17 +2,6 @@
 
 A simple Todo application built with Flask and MongoDB.
 
-## Project Structure
-    
-    flask-todo/
-│
-├── app.py
-├── templates/
-│   └── todo_form.html
-├── data.json
-├── requirements.txt
-└── README.md
-
 
 ## Features
 
